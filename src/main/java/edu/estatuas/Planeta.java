@@ -1,5 +1,7 @@
 package edu.estatuas;
 
+import java.util.EnumSet;
+
 public enum Planeta {
 
     MERCURY(3.303e+23, 2.4397e+6),
@@ -35,7 +37,19 @@ public enum Planeta {
     }
 
     public double masaPersona(double peso) {
-        return peso /;
+        return peso / (G * EARTH.getMasa() / EARTH.getRadius());
     }
 
+    public double pesoSuperficie(double peso) {
+        return masaPersona(peso) * gravedadSuperficie();
+    }
+
+    public static EnumSet<Planeta> getGigantesGaseosos() {
+        return EnumSet.range(JUPITER, NEPTUNE);
+
+    }
+
+    public static EnumSet<Planeta> getPlanetasTerrestres() {
+        return EnumSet.range(MERCURY, MARS);
+    }
 }

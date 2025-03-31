@@ -19,6 +19,8 @@ public class ArnoldMain {
         for(Planeta planeta: Planeta.getGigantesGaseosos()){
             System.out.printf("Your weight on %s is %f N%n", planeta.name(), planeta.pesoSuperficie(peso));
         }
+
+
     }
 
 }

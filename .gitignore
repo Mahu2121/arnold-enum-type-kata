@@ -16,6 +16,7 @@ target/
 target/.gitignore
 /.idea/vcs.xml
 /.idea/misc.xml
+/.idea
 
 ### Eclipse ###
 .apt_generated

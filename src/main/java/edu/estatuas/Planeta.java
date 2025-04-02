@@ -33,11 +33,18 @@ public enum Planeta {
     }
 
     public double gravedadSuperficie() {
-        return G * this.masa / this.radius;
+        return G * this.masa / Math.pow(this.radius, 2) ;
     }
 
+
+    public double gravedadSuperficial(Planeta planeta) {
+        return G * planeta.getMasa() / Math.pow(planeta.getRadius(), 2);
+    }
+
+
     public double masaPersona(double peso) {
-        return peso / (G * EARTH.getMasa() / EARTH.getRadius());
+        return peso / gravedadSuperficial(EARTH);
+
     }
 
     public double pesoSuperficie(double peso) {
